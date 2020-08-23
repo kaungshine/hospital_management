@@ -15,8 +15,8 @@ class Patient extends Model
     {
     	return $this->hasMany('App\Prescribe');
     }
-    public function rooms()
+    public function stays()
     {
-    	return $this->hasMany('App\Room');
+    	return $this->hasMany('App\Stay');
     }
 }
