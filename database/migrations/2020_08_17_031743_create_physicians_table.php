@@ -15,9 +15,11 @@ class CreatePhysiciansTable extends Migration
     {
         Schema::create('physicians', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('position');
-            $table->integer('ssn'); //this is a security number of a physician
+            $table->integer('security_number'); //this is a security number of a physician
+            $table->foreignId('user_id')
+                  ->nullable(false)
+                  ->constrained();
             $table->timestamps();
         });
     }

@@ -23,7 +23,6 @@ class CreateDepartmentPhysicianTable extends Migration
                   ->nullable(false)
                   ->constrained()
                   ->onDelete('cascade');
-            $table->boolean('primaryaffiliation')->nullable(false);
             $table->timestamps();
         });
     }

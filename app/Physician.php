@@ -5,11 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Physician extends Model
-{
+{   
+    protected $fillable = [
+        'position', 'security_number', 'user_id',
+    ];
+
     public function departments()
     {
-    	return $this->belongsToMany('App\Department')
-					->withPivot('primaryaffiliation');
+    	return $this->belongsToMany('App\Department');
     }
     public function procedures()
     {
@@ -22,5 +25,9 @@ class Physician extends Model
     public function prescribes()
     {
         return $this->hasMany('App\Prescribe');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

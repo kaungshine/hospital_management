@@ -23,6 +23,7 @@ class CreatePhysicianProcedureTable extends Migration
                   ->nullable(false)
                   ->constrained()
                   ->onDelete('cascade');
+            $table->dateTime('time');
             $table->timestamps();
         });
     }

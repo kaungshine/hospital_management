@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
-    //
+    protected $fillable = [
+        'name', 'address', 'phone', 'insuranceid', 'user_id',
+    ];
+
     public function appointments()
     {
     	return $this->hasMany('App\Appointment');
@@ -18,5 +21,13 @@ class Patient extends Model
     public function stays()
     {
     	return $this->hasMany('App\Stay');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+    public function diseases()
+    {
+        return $this->belongsToMany('App\Disease');
     }
 }

@@ -8,8 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Nurse::class, function (Faker $faker) {
     return [
         //
-        'name' => $faker->name,
         'position' => $faker->word,
-        'ssn' => $faker->randomDigit,
+        'security_number' => $faker->randomDigit,
     ];
 });

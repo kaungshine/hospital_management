@@ -27,8 +27,8 @@ class CreateAppointmentsTable extends Migration
                   ->nullable(false)
                   ->constrained()
                   ->onDelete('cascade');
-            $table->date('start_dt_time');
-            $table->date('end_dt_time');
+            $table->dateTime('start_date_time');
+            $table->dateTime('end_date_time');
             $table->text('examinationroom');
             $table->timestamps();
         });

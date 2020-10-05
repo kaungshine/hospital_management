@@ -15,9 +15,11 @@ class CreateNursesTable extends Migration
     {
         Schema::create('nurses', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('position');
-            $table->integer('ssn');
+            $table->integer('security_number');
+            $table->foreignId('user_id')
+                  ->nullable(false)
+                  ->constrained();
             $table->timestamps();
         });
     }

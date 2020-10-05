@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Department extends Model
 {
+	protected $fillable = [
+    	'name', 'head',
+    ];
+
     public function physicians()
     {
-        return $this->belongsToMany('App\Physicians')
-         			->withPivot('primaryaffiliation');
+        return $this->belongsToMany('App\Physicians');
     }
 }
